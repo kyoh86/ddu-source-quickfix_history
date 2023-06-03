@@ -6,10 +6,7 @@ import {
 } from "https://deno.land/x/ddu_vim@v2.9.2/types.ts";
 import { batch, Denops, fn } from "https://deno.land/x/ddu_vim@v2.9.2/deps.ts";
 
-export type ActionData = {
-  nr: number;
-  title: string;
-};
+import { ActionData } from "../@ddu-kinds/quickfix_history.ts";
 
 type SourceParams = Record<never, never>;
 
@@ -43,17 +40,6 @@ export class Source extends BaseSource<SourceParams> {
       },
     });
   }
-
-  actions = {
-    open: async ({ denops, items }: ActionArguments<SourceParams>) => {
-      const action = items[0]?.action as ActionData;
-      await batch(denops, async (denops) => {
-        await denops.cmd(`${action.nr}chistory`);
-        await denops.cmd("copen");
-      });
-      return Promise.resolve(ActionFlags.None);
-    },
-  };
 
   params(): SourceParams {
     return {};
