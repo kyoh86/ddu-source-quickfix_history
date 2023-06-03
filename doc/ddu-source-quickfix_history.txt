@@ -1,0 +1,60 @@
+*ddu-source-quickfix_history.txt*	Quickfix history source for ddu.vim
+
+Author: kyoh86
+License: MIT license
+
+CONTENTS				*ddu-source-quickfix_history-contents*
+
+Introduction		|ddu-source-quickfix_history-introduction|
+Install			|ddu-source-quickfix_history-install|
+Params			|ddu-source-quickfix_history-params|
+Actions			|ddu-kind-quickfix_history-actions|
+Examples		|ddu-source-quickfix_history-examples|
+
+
+==============================================================================
+INTRODUCTION			*ddu-source-quickfix_history-introduction*
+
+This source collects quickfix histories.
+
+
+==============================================================================
+INSTALL					*ddu-source-quickfix_history-install*
+
+Please install both "ddu.vim" and "denops.vim".
+
+https://github.com/Shougo/ddu.vim
+https://github.com/vim-denops/denops.vim
+
+
+==============================================================================
+PARAMS					*ddu-source-quickfix_history-params*
+
+==============================================================================
+ACTIONS					*ddu-kind-quickfix_history-actions*
+
+					*ddu-kind-quickfix_history-action-open*
+open
+		Open the quickfix window from the selected item.
+
+
+==============================================================================
+EXAMPLES				*ddu-source-quickfix_history-examples*
+
+>
+	" Use emoji source.
+	call ddu#start({ 'sources': [{ 'name': 'quickfix_history' }] })
+
+	" You must set the default action.
+	call ddu#custom#patch_global(#{
+	    \   kindOptions: #{
+	    \     quickfix_history: #{
+	    \       defaultAction: 'open',
+	    \     },
+	    \   }
+	    \ })
+<
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
