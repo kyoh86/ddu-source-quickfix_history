@@ -4,21 +4,38 @@ import {
   BaseSource,
   Item,
 } from "https://deno.land/x/ddu_vim@v2.9.2/types.ts";
-// import { fn } from "https://deno.land/x/ddu_vim@v2.9.2/deps.ts";
+import { batch, Denops, fn } from "https://deno.land/x/ddu_vim@v2.9.2/deps.ts";
 
 export type ActionData = {
-  nr: string;
+  nr: number;
+  title: string;
 };
 
-type Params = Record<never, never>;
+type SourceParams = Record<never, never>;
 
-export class Source extends BaseSource<Params> {
+export class Source extends BaseSource<SourceParams> {
   kind = "quickfix_history";
-  gather({ denops, sourceParams }): ReadableStream<Item<ActionData>[]> {
+
+  gather(args: { denops: Denops }): ReadableStream<Item<ActionData>[]> {
     return new ReadableStream({
-      start(controller) {
+      async start(controller) {
         try {
-          // TODO: build item and enqueue with controller.enqueue()
+          await Promise.all(
+            [...Array(10)].map(async (_, i) => {
+              const history = await fn.getqflist(args.denops, {
+                nr: i + 1,
+                id: 0,
+                title: true,
+                size: true,
+                // items: true, // NOTE: when it supports "preview", quickfix_history needs "items"
+              });
+              if (!history.size) return;
+              controller.enqueue([{
+                word: history.title as string,
+                action: history as ActionData,
+              }]);
+            }),
+          );
         } catch (e) {
           console.error(e);
         }
@@ -28,14 +45,17 @@ export class Source extends BaseSource<Params> {
   }
 
   actions = {
-    edit: async ({ denops, items }: ActionArguments<Params>) => {
+    open: async ({ denops, items }: ActionArguments<SourceParams>) => {
       const action = items[0]?.action as ActionData;
-      // TODO:
+      await batch(denops, async (denops) => {
+        await denops.cmd(`${action.nr}chistory`);
+        await denops.cmd("copen");
+      });
       return Promise.resolve(ActionFlags.None);
     },
   };
 
-  params(): Params {
+  params(): SourceParams {
     return {};
   }
 }
