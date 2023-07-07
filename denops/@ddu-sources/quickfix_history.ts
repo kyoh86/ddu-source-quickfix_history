@@ -35,8 +35,9 @@ export class Source extends BaseSource<SourceParams> {
           );
         } catch (e) {
           console.error(e);
+        } finally {
+          controller.close();
         }
-        controller.close();
       },
     });
   }
