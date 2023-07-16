@@ -3,8 +3,8 @@ import {
   ActionFlags,
   BaseSource,
   Item,
-} from "https://deno.land/x/ddu_vim@v3.2.7/types.ts";
-import { batch, Denops, fn } from "https://deno.land/x/ddu_vim@v3.2.7/deps.ts";
+} from "https://deno.land/x/ddu_vim@v3.4.2/types.ts";
+import { batch, Denops, fn } from "https://deno.land/x/ddu_vim@v3.4.2/deps.ts";
 
 import { ActionData } from "../@ddu-kinds/quickfix_history.ts";
 
