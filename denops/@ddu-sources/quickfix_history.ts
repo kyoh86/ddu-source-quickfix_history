@@ -8,7 +8,7 @@ import { batch, Denops, fn } from "https://deno.land/x/ddu_vim@v3.4.4/deps.ts";
 
 import { ActionData } from "../@ddu-kinds/quickfix_history.ts";
 
-type SourceParams = Record<never, never>;
+type SourceParams = Record<PropertyKey, never>;
 
 export class Source extends BaseSource<SourceParams> {
   kind = "quickfix_history";
