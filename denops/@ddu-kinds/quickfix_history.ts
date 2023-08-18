@@ -3,8 +3,8 @@ import {
   ActionFlags,
   Actions,
   BaseKind,
-} from "https://deno.land/x/ddu_vim@v3.4.4/types.ts";
-import { batch } from "https://deno.land/x/ddu_vim@v3.4.4/deps.ts";
+} from "https://deno.land/x/ddu_vim@v3.5.1/types.ts";
+import { batch } from "https://deno.land/x/ddu_vim@v3.5.1/deps.ts";
 
 export type ActionData = {
   nr: number;
