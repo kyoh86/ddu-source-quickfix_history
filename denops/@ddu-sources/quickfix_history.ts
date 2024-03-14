@@ -1,6 +1,6 @@
-import type { Item } from "https://deno.land/x/ddu_vim@v3.10.2/types.ts";
-import { BaseSource } from "https://deno.land/x/ddu_vim@v3.10.2/types.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.10.2/deps.ts";
+import type { Item } from "https://deno.land/x/ddu_vim@v3.10.3/types.ts";
+import { BaseSource } from "https://deno.land/x/ddu_vim@v3.10.3/types.ts";
+import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.10.3/deps.ts";
 
 import { ActionData } from "../@ddu-kinds/quickfix_history.ts";
 
