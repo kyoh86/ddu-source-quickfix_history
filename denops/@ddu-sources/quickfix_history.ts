@@ -1,4 +1,4 @@
-import type { Item } from "https://deno.land/x/ddu_vim@v4.1.0/types.ts";
+import type { Item } from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
 import { BaseSource } from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
 import { Denops, fn } from "https://deno.land/x/ddu_vim@v4.1.1/deps.ts";
 
