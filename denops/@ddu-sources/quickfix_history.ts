@@ -1,8 +1,9 @@
-import type { Item } from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
-import { BaseSource } from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v4.1.1/deps.ts";
+import type { Item } from "jsr:@shougo/ddu-vim@5.0.0/types";
+import { BaseSource } from "jsr:@shougo/ddu-vim@5.0.0/types";
+import type { Denops } from "jsr:@denops/std@7.0.1";
+import * as fn from "jsr:@denops/std@7.0.1/function";
 
-import { ActionData } from "../@ddu-kinds/quickfix_history.ts";
+import type { ActionData } from "../@ddu-kinds/quickfix_history.ts";
 
 type SourceParams = Record<PropertyKey, never>;
 

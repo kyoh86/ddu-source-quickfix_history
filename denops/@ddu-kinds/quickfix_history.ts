@@ -1,10 +1,10 @@
 import {
-  ActionArguments,
+  type ActionArguments,
   ActionFlags,
-  Actions,
+  type Actions,
   BaseKind,
-} from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
-import { batch } from "https://deno.land/x/ddu_vim@v4.1.1/deps.ts";
+} from "jsr:@shougo/ddu-vim@5.0.0/types";
+import { batch } from "jsr:@denops/std@7.0.1/batch";
 
 export type ActionData = {
   nr: number;
