@@ -2,9 +2,9 @@ import {
   type ActionArguments,
   ActionFlags,
   type Actions,
-  BaseKind,
-} from "jsr:@shougo/ddu-vim@~5.0.0/types";
-import { batch } from "jsr:@denops/std@~7.0.1/batch";
+} from "jsr:@shougo/ddu-vim@~6.0.0/types";
+import { BaseKind } from "jsr:@shougo/ddu-vim@~6.0.0/kind";
+import { batch } from "jsr:@denops/std@~7.1.0/batch";
 
 export type ActionData = {
   nr: number;
