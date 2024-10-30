@@ -1,14 +1,14 @@
-import type { Item } from "jsr:@shougo/ddu-vim@~6.1.0/types";
-import { BaseSource } from "jsr:@shougo/ddu-vim@~6.1.0/source";
-import type { Denops } from "jsr:@denops/std@~7.1.0";
-import * as fn from "jsr:@denops/std@~7.1.0/function";
+import type { Item } from "jsr:@shougo/ddu-vim@~6.2.0/types";
+import { BaseSource } from "jsr:@shougo/ddu-vim@~6.2.0/source";
+import type { Denops } from "jsr:@denops/std@~7.3.0";
+import * as fn from "jsr:@denops/std@~7.3.0/function";
 
 import type { ActionData } from "../@ddu-kinds/quickfix_history.ts";
 
 type SourceParams = Record<PropertyKey, never>;
 
 export class Source extends BaseSource<SourceParams> {
-  kind = "quickfix_history";
+  override kind = "quickfix_history";
 
   gather(args: { denops: Denops }): ReadableStream<Item<ActionData>[]> {
     return new ReadableStream({
