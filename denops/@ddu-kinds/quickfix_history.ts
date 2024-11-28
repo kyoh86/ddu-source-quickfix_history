@@ -4,7 +4,7 @@ import {
   type Actions,
 } from "jsr:@shougo/ddu-vim@~7.0.0/types";
 import { BaseKind } from "jsr:@shougo/ddu-vim@~7.0.0/kind";
-import { batch } from "jsr:@denops/std@~7.3.0/batch";
+import { batch } from "jsr:@denops/std@~7.4.0/batch";
 
 export type ActionData = {
   nr: number;
