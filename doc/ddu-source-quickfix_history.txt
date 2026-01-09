@@ -3,23 +3,27 @@
 Author: kyoh86
 License: MIT license
 
-CONTENTS				*ddu-source-quickfix_history-contents*
+CONTENTS
+                                        *ddu-source-quickfix_history-contents*
 
-Introduction		|ddu-source-quickfix_history-introduction|
-Install			|ddu-source-quickfix_history-install|
-Params			|ddu-source-quickfix_history-params|
-Actions			|ddu-kind-quickfix_history-actions|
-Examples		|ddu-source-quickfix_history-examples|
+Introduction			|ddu-source-quickfix_history-introduction|
+Install				|ddu-source-quickfix_history-install|
+Params				|ddu-source-quickfix_history-params|
+Actions				|ddu-kind-quickfix_history-actions|
+Action Data			|ddu-kind-quickfix_history-action-data|
+Examples			|ddu-source-quickfix_history-examples|
 
 
 ==============================================================================
-INTRODUCTION			*ddu-source-quickfix_history-introduction*
+Introduction~
+                                    *ddu-source-quickfix_history-introduction*
 
 This source collects quickfix histories.
 
 
 ==============================================================================
-INSTALL					*ddu-source-quickfix_history-install*
+Install~
+                                         *ddu-source-quickfix_history-install*
 
 Please install both "ddu.vim" and "denops.vim".
 
@@ -28,10 +32,12 @@ https://github.com/vim-denops/denops.vim
 
 
 ==============================================================================
-PARAMS					*ddu-source-quickfix_history-params*
+Params~
+                                          *ddu-source-quickfix_history-params*
 
 ==============================================================================
-ACTIONS					*ddu-kind-quickfix_history-actions*
+Actions~
+                                           *ddu-kind-quickfix_history-actions*
 
 					*ddu-kind-quickfix_history-action-open*
 open
@@ -39,7 +45,21 @@ open
 
 
 ==============================================================================
-EXAMPLES				*ddu-source-quickfix_history-examples*
+Action data~
+                                       *ddu-kind-quickfix_history-action-data*
+
+This source generates action-data with properties below.
+
+nr
+	number
+
+title
+	string
+
+
+==============================================================================
+Examples~
+                                        *ddu-source-quickfix_history-examples*
 
 >
 	" Use emoji source.
