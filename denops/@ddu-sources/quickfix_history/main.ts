@@ -3,7 +3,7 @@ import { BaseSource } from "@shougo/ddu-vim/source";
 import type { Denops } from "@denops/std";
 import * as fn from "@denops/std/function";
 
-import type { ActionData } from "../@ddu-kinds/quickfix_history.ts";
+import type { ActionData } from "../../@ddu-kinds/quickfix_history/main.ts";
 
 type SourceParams = Record<PropertyKey, never>;
 
