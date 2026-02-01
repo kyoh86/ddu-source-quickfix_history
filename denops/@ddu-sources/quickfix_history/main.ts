@@ -2,10 +2,19 @@ import type { Item } from "@shougo/ddu-vim/types";
 import { BaseSource } from "@shougo/ddu-vim/source";
 import type { Denops } from "@denops/std";
 import * as fn from "@denops/std/function";
+import { options } from "@denops/std/variable";
 
 import type { ActionData } from "../../@ddu-kinds/quickfix_history/main.ts";
 
 type SourceParams = Record<PropertyKey, never>;
+
+async function chistory(denops: Denops): Promise<number> {
+  try {
+    return await options.get(denops, "chistory", 10);
+  } catch {
+    return 10;
+  }
+}
 
 export class Source extends BaseSource<SourceParams> {
   override kind = "quickfix_history";
@@ -14,8 +23,9 @@ export class Source extends BaseSource<SourceParams> {
     return new ReadableStream({
       async start(controller) {
         try {
+          const count = await chistory(args.denops);
           await Promise.all(
-            [...Array(10)].map(async (_, i) => {
+            [...Array(count)].map(async (_, i) => {
               const history = await fn.getqflist(args.denops, {
                 nr: i + 1,
                 id: 0,
